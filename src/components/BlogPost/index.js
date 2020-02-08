@@ -7,7 +7,7 @@ import Card from "../UI/Card";
  **/
 
 const BlogPost = props => {
-  return <Card>My first blog post</Card>;
+  return <Card style={{ width: "70%" }}>My first blog post</Card>;
 };
 
 export default BlogPost;
