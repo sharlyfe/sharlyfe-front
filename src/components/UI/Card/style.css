@@ -1,3 +1,13 @@
 .card {
+  width: 100%;
   background: #fff;
+}
+.blogpost {
+  width: 70%;
+  background-color: #fff;
+}
+
+.sidebar {
+  width: 27%;
+  background-color: #fff;
 }

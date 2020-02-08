@@ -21,7 +21,22 @@
   color: 565673;
   padding: 0 10px;
 }
-.search {
+.search form {
   display: flex;
   margin: 0 10px;
+}
+
+.searchinput {
+  border: 0;
+  width: 0;
+  transition: 0.2s ease-in;
+}
+.searchinput.active {
+  width: 150px;
+}
+.searchinput:focus {
+  outline: none;
+}
+.searchicon {
+  cursor: pointer;
 }
