@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Card from "../UI/Card";
+import blogPost from "../../data/blog.json";
 /**
  * @author
  * @function BlogPost
  **/
 
 const BlogPost = props => {
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    const postid = props.match.params.postid;
+    const post = blogPost.data.find(post => post.id == postid);
+    setPost(post);
+  });
   return (
     <div className="blogPostContainer">
       <Card>
         <div className="blogHeader">
           <span className="blogCategory">Featured</span>
-          <h1 className="postTitle">Beautiful is always beautiful</h1>
+          <h1 className="postTitle">testtestreplace with props</h1>
           <span className="postedBy">
-            {" "}
             posted on feb 8, 2020 by behnam heirani
           </span>
         </div>
@@ -22,7 +29,7 @@ const BlogPost = props => {
           <img
             src={require("../../blogPostImages/memories-from.jpg")}
             alt="Post Image"
-          ></img>
+          />
         </div>
 
         <div className="postContent">
