@@ -18,6 +18,17 @@ const BlogPost = props => {
             posted on feb 8, 2020 by behnam heirani
           </span>
         </div>
+        <div className="postimageContainer">
+          <img
+            src={require("../../blogPostImages/memories-from.jpg")}
+            alt="Post Image"
+          ></img>
+        </div>
+
+        <div className="postContent">
+          <h3>Post Title</h3>
+          <p>this is test !</p>
+        </div>
       </Card>
     </div>
   );
