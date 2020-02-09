@@ -14,13 +14,15 @@ const BlogPost = props => {
     const postid = props.match.params.postid;
     const post = blogPost.data.find(post => post.id == postid);
     setPost(post);
-  });
+    console.log(blogPost);
+  }, post);
+
   return (
     <div className="blogPostContainer">
       <Card>
         <div className="blogHeader">
           <span className="blogCategory">Featured</span>
-          <h1 className="postTitle">testtestreplace with props</h1>
+          <h1 className="postTitle"> {post.blogTitle}</h1>
           <span className="postedBy">
             posted on feb 8, 2020 by behnam heirani
           </span>
