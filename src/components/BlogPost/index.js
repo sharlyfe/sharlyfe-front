@@ -2,41 +2,54 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import Card from "../UI/Card";
 import blogPost from "../../data/blog.json";
+
 /**
  * @author
  * @function BlogPost
  **/
 
 const BlogPost = props => {
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState({
+    id: "",
+    blogCategory: "",
+    blogTitle: "",
+    postedOn: "",
+    author: "",
+    blogImage: "",
+    blogText: ""
+  });
+  const [slug, setSlug] = useState("");
 
   useEffect(() => {
-    const postid = props.match.params.postid;
-    const post = blogPost.data.find(post => post.id == postid);
+    const slug = props.match.params.slug;
+    const post = blogPost.data.find(post => post.slug == slug);
     setPost(post);
-    console.log(blogPost);
-  }, post);
+    setSlug(slug);
+  }, [post, props.match.params.slug]);
+
+  if (post.blogImage == "") return null;
 
   return (
     <div className="blogPostContainer">
       <Card>
         <div className="blogHeader">
-          <span className="blogCategory">Featured</span>
-          <h1 className="postTitle"> {post.blogTitle}</h1>
+          <span className="blogCategory">{post.blogCategory}</span>
+          <h1 className="postTitle">{post.blogTitle}</h1>
           <span className="postedBy">
-            posted on feb 8, 2020 by behnam heirani
+            posted on {post.postedOn} by {post.author}
           </span>
         </div>
-        <div className="postimageContainer">
+
+        <div className="postImageContainer">
           <img
-            src={require("../../blogPostImages/memories-from.jpg")}
+            src={require("../../blogPostImages/" + post.blogImage)}
             alt="Post Image"
           />
         </div>
 
         <div className="postContent">
-          <h3>Post Title</h3>
-          <p>this is test !</p>
+          <h3>{post.blogTitle}</h3>
+          <p>{post.blogText}</p>
         </div>
       </Card>
     </div>

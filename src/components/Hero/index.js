@@ -3,6 +3,7 @@ import "./style.css";
 import Card from "../UI/Card";
 import Logo from "../Logo";
 import Navbar from "../Navbar";
+
 /**
  * @author
  * @function Hero
@@ -15,8 +16,8 @@ const Hero = props => {
         <div style={{ padding: "50px 0" }}>
           <Logo />
         </div>
+        <Navbar />
       </Card>
-      <Navbar />
     </div>
   );
 };

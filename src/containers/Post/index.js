@@ -1,23 +1,26 @@
-import React from "react";
-import "./style.css";
-import Card from "../../components/UI/Card";
-import BlogPost from "../../components/BlogPost";
-import Sidebar from "../../components/Sidebar";
+import React from 'react';
+import './style.css';
+import Card from '../../components/UI/Card';
+import BlogPost from '../../components/BlogPost';
+import Sidebar from '../../components/Sidebar';
+import Layout from '../../components/Layout';
 
 /**
- * @author
- * @function Post
- **/
+* @author
+* @function Post
+**/
 
-const Post = props => {
-  console.log(props);
+const Post = (props) => {
 
-  return (
-    <section className="container">
-      <BlogPost {...props} />
-      <Sidebar />
-    </section>
-  );
-};
+    console.log(props);
+
+
+  return(
+        <Layout>
+          <BlogPost {...props} />
+        </Layout>
+   )
+
+ }
 
 export default Post;
